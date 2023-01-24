@@ -7,8 +7,6 @@ function setup()
    parameter.action("Enable", function() b:enable() end)
    
    tc = TouchController()
-   testCanvas()
-   tc:addInstance(canvas)
    
    b = Button(vec2(100, HEIGHT - 100), 30, color(229, 50, 50))
    b:setSprite(asset.documents.Dropbox.material_play)
@@ -34,8 +32,6 @@ end
 function draw()
    background(28)
    tc:update()
-   canvas:update()
-   canvas:draw()
    b:draw()
    mb:draw()
    sb:draw()
@@ -43,8 +39,4 @@ end
 
 function touched(touch)
    tc:touched(touch)
-end
-
-function testCanvas()
-   canvas = PinchPanCanvas()
 end
